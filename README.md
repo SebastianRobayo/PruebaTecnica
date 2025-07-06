@@ -153,13 +153,15 @@ Código Situación Ejemplo Respuesta
 
 Desarrollo:
 
-````bash
+```bash
 npm run start:dev
 Producción:
 
 npm run build && npm run start:prod
 ```
+
 ## 🛠️ Migraciones
+
 ```bash
 Crear nueva migración:
 
@@ -168,9 +170,11 @@ Aplicar en producción:
 
 npx prisma migrate deploy
 ```
+
 ## 🔒 Seguridad
+
 ```bash
 Validación de todos los inputs
 
 Sanitización básica de datos
-````
+```
