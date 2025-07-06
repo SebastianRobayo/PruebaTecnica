@@ -34,12 +34,11 @@ npm install -D @nestjs/cli prisma typescript ts-node
 
 Clonar repositorio:
 
-````bash
+```bash
 git clone [repo-url] && cd nombre-proyecto
 
 Instalar dependencias:
 
-```bash
 npm install o npm i
 
 Configurar base de datos MySQL:
@@ -54,9 +53,8 @@ APP_PORT=3000
 
 Ejecutar migraciones:
 
-```bash
 npx prisma migrate dev --name init
-````
+```
 
 ## 📁 Estructura del Proyecto
 
@@ -159,18 +157,15 @@ Desarrollo:
 npm run start:dev
 Producción:
 
-```bash
 npm run build && npm run start:prod
 ```
 ## 🛠️ Migraciones
 ```bash
 Crear nueva migración:
 
-```bash
 npx prisma migrate dev --name "descripcion"
 Aplicar en producción:
 
-```bash
 npx prisma migrate deploy
 ```
 ## 🔒 Seguridad
