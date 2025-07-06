@@ -25,14 +25,16 @@
 | MySQL      | 5.7            | 8.0         |
 | NestJS CLI | 9.x            | 10.x        |
 
-````bash
+```bash
 # Dependencias de desarrollo
 npm install -D @nestjs/cli prisma typescript ts-node
+```
 
 ## ⚙️ Configuración
+
 Clonar repositorio:
 
-```bash
+````bash
 git clone [repo-url] && cd nombre-proyecto
 
 Instalar dependencias:
@@ -54,34 +56,40 @@ Ejecutar migraciones:
 
 ```bash
 npx prisma migrate dev --name init
+````
 
 ## 📁 Estructura del Proyecto
+
 text
 src/
 ├── app.module.ts
 ├── main.ts
 ├── prisma/
-│   ├── schema.prisma
-│   └── prisma.service.ts
+│ ├── schema.prisma
+│ └── prisma.service.ts
 ├── users/
-│   ├── dto/
-│   │   ├── create-user.dto.ts         # DTO para creación de usuario
-│   ├── users.controller.ts
-│   ├── users.service.ts
-│   └── users.module.ts
+│ ├── dto/
+│ │ ├── create-user.dto.ts # DTO para creación de usuario
+│ ├── users.controller.ts
+│ ├── users.service.ts
+│ └── users.module.ts
 └── messages/
-    ├── dto/
-    │   ├── create-message.dto.ts      # DTO para creación de mensaje
-    ├── messages.controller.ts
-    ├── messages.service.ts
-    └── messages.module.ts
+├── dto/
+│ ├── create-message.dto.ts # DTO para creación de mensaje
+├── messages.controller.ts
+├── messages.service.ts
+└── messages.module.ts
+
+```
 
 ## 🔑 Variables de Entorno
 Variable	Descripción	Ejemplo
 DATABASE_URL	URL conexión MySQL	mysql://user:pass@localhost:3306/db
 APP_PORT	Puerto aplicación	3000
+```
 
 ## 🌐 Endpoints
+
 Usuarios (/users)
 POST / - Crear usuario
 
@@ -95,6 +103,7 @@ POST / - Crear mensaje
 json
 {"content": "string", "userId": number}
 
+```
 ## 🗃️ Modelos de Datos
 prisma
 model User {
@@ -112,8 +121,10 @@ model Message {
   userId    Int
   user      User     @relation(fields: [userId], references: [id])
 }
+```
 
 ## ✅ Validaciones
+
 Usuario:
 Nombre: string no vacío (1-100 chars)
 
@@ -125,15 +136,17 @@ Contenido: string no vacío (1-500 chars)
 userId: número entero positivo (usuario existente)
 
 ## 🚨 Manejo de Errores
-Código	Situación	Ejemplo Respuesta
-400	Validación fallida	{"message": "Validation failed"}
-404	Recurso no encontrado	{"message": "User not found"}
-500	Error interno del servidor	{"message": "Internal error"}
+
+Código Situación Ejemplo Respuesta
+400 Validación fallida {"message": "Validation failed"}
+404 Recurso no encontrado {"message": "User not found"}
+500 Error interno del servidor {"message": "Internal error"}
 
 ## 🚀 Ejecución
+
 Desarrollo:
 
-```bash
+````bash
 npm run start:dev
 Producción:
 
