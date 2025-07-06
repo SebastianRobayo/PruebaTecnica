@@ -11,10 +11,8 @@
 7. [Validaciones](#-validaciones)
 8. [Errores](#-manejo-de-errores)
 9. [Ejecución](#-ejecución)
-10. [Pruebas](#-pruebas)
-11. [Migraciones](#-migraciones)
-12. [Seguridad](#-seguridad)
-13. [Roadmap](#-roadmap)
+10. [Migraciones](#-migraciones)
+11. [Seguridad](#-seguridad)
 
 ---
 
@@ -35,12 +33,12 @@ npm install -D @nestjs/cli prisma typescript ts-node
 Clonar repositorio:
 
 ```bash
-git clone [repo-url] && cd nestjs-prisma-api
+git clone [repo-url] && cd nombre-proyecto
 
 Instalar dependencias:
 
 ```bash
-npm install
+npm install o npm i
 
 Configurar base de datos MySQL:
 
@@ -67,11 +65,13 @@ src/
 │   └── prisma.service.ts
 ├── users/
 │   ├── dto/
+│   │   ├── create-user.dto.ts         # DTO para creación de usuario
 │   ├── users.controller.ts
 │   ├── users.service.ts
 │   └── users.module.ts
 └── messages/
     ├── dto/
+    │   ├── create-message.dto.ts      # DTO para creación de mensaje
     ├── messages.controller.ts
     ├── messages.service.ts
     └── messages.module.ts
@@ -80,7 +80,6 @@ src/
 Variable	Descripción	Ejemplo
 DATABASE_URL	URL conexión MySQL	mysql://user:pass@localhost:3306/db
 APP_PORT	Puerto aplicación	3000
-APP_ENV	Entorno (dev/prod)	development
 
 ## 🌐 Endpoints
 Usuarios (/users)
@@ -141,11 +140,6 @@ Producción:
 ```bash
 npm run build && npm run start:prod
 
-## 🧪 Pruebas
-```bash
-npm test       # Unit tests
-npm run test:e2e  # End-to-end tests
-
 ## 🛠️ Migraciones
 Crear nueva migración:
 
@@ -160,22 +154,4 @@ npx prisma migrate deploy
 Validación de todos los inputs
 
 Sanitización básica de datos
-
-Próximas mejoras:
-
-Autenticación JWT
-
-Rate limiting
-
-CORS estrictos
-
-## 🗺️ Roadmap
-Prioridades:
-Implementar autenticación
-
-Añadir documentación Swagger
-
-Dockerizar aplicación
-
-Sistema de logging
 ````
