@@ -60,6 +60,7 @@ npx prisma migrate dev --name init
 
 ## 📁 Estructura del Proyecto
 
+```bash
 text
 src/
 ├── app.module.ts
@@ -83,6 +84,8 @@ src/
 ```
 
 ## 🔑 Variables de Entorno
+
+```bash
 Variable	Descripción	Ejemplo
 DATABASE_URL	URL conexión MySQL	mysql://user:pass@localhost:3306/db
 APP_PORT	Puerto aplicación	3000
@@ -90,6 +93,7 @@ APP_PORT	Puerto aplicación	3000
 
 ## 🌐 Endpoints
 
+```bash
 Usuarios (/users)
 POST / - Crear usuario
 
@@ -104,7 +108,10 @@ json
 {"content": "string", "userId": number}
 
 ```
+
 ## 🗃️ Modelos de Datos
+
+```bash
 prisma
 model User {
   id        Int      @id @default(autoincrement())
@@ -125,6 +132,7 @@ model Message {
 
 ## ✅ Validaciones
 
+```bash
 Usuario:
 Nombre: string no vacío (1-100 chars)
 
@@ -134,6 +142,7 @@ Mensaje:
 Contenido: string no vacío (1-500 chars)
 
 userId: número entero positivo (usuario existente)
+```
 
 ## 🚨 Manejo de Errores
 
@@ -152,8 +161,9 @@ Producción:
 
 ```bash
 npm run build && npm run start:prod
-
+```
 ## 🛠️ Migraciones
+```bash
 Crear nueva migración:
 
 ```bash
@@ -162,8 +172,9 @@ Aplicar en producción:
 
 ```bash
 npx prisma migrate deploy
-
+```
 ## 🔒 Seguridad
+```bash
 Validación de todos los inputs
 
 Sanitización básica de datos
